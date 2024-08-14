@@ -7,6 +7,7 @@ int a[N];
 int main(){
 	int len,n;
 	cin>>len>>n;
+	//comments added
 	for (int i=1;i<=n;i++) cin>>a[i];
 	sort(a+1,a+n+1);
 	int l=0,r=0,now=0;
