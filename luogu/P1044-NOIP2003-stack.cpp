@@ -2,29 +2,19 @@
 #include <iostream>
 using namespace std;
 const int N=40+5;
-int n,ans;
-int a[N];
-void DFS(int step,int cnt1,int cnt0,int now){
-    if (cnt1>n) return ;
-    if (cnt0>n) return ;
-    if (step > 2*n){
-        ans++;
-        /*
-        for (int i=1;i<=2*n;i++){
-            cout<<a[i]<<" \n"[i==2*n];
-        }
-        */
-    }
-    a[step]=1;  
-    DFS(step+1,cnt1+1,cnt0,now+1);
-    if (now>0){
-        a[step]=0;
-        DFS(step+1,cnt1,cnt0+1,now-1);
-    }
+int f[N][N];
+//f[i][j]:操作队列剩余i个元素，栈中有j个元素
+//记忆化搜索
+int F(int a,int b){
+    if (f[a][b]) return f[a][b];
+    if (a==0) return 1;
+    if (b<0) return 0;
+    return f[a][b]=F(a-1,b+1)+F(a,b-1);
+    //要想好两种操作，一种是入栈，相当于操作队列会少1个元素，而栈中多一个元素。还有一种是出栈，栈中元素减少一个。
 }
 int main(){
+    int n;
     cin>>n;
-    DFS(1,0,0,0);
-    cout<<ans<<endl;
+    cout<<F(n,0)<<endl;
     return 0;
 }
