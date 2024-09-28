@@ -1,19 +1,23 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <cmath>
 using namespace std;
+const int N=100+5;
+int a[N];
+string check(int n,int k){
+    for (int i=1;i<=n;i++){
+        for (int j=1;j<=n;j++){
+            if (i==j) continue;
+            if (abs(a[i]-a[j])==k) return "Yes\n";
+        }
+    }
+    return "No\n";
+}
 int main(){
-    string s,t;
-    cin>>s;
-    cin>>t;
-    string s1=s,t1=t;
-    for (int i=0;i<s.length();i++) s[i]=tolower(s[i]);
-    for (int i=0;i<t.length();i++) t[i]=tolower(t[i]);
-    int a=s.find("rioi");
-    int b=t.find("rioi");
-    if (a!=-1 && b!=-1) cout<<"Either is ok\n";
-    else if (a!=-1) cout<<s1<<" for sure!\n";
-    else if (b!=-1) cout<<t1<<" for sure!\n";
-    else cout<<"Try again!\n"; 
+    int n,k;
+    cin>>n>>k;
+    for (int i=1;i<=n;i++) cin>>a[i];
+    cout<<check(n,k);
     return 0;
 }
