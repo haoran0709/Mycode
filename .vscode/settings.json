@@ -57,6 +57,27 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "algorithm": "cpp"
-    }
+        "algorithm": "cpp",
+        "cassert": "cpp",
+        "ccomplex": "cpp",
+        "cerrno": "cpp",
+        "cfloat": "cpp",
+        "ciso646": "cpp",
+        "climits": "cpp",
+        "cstdalign": "cpp",
+        "cstdbool": "cpp",
+        "ctgmath": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
+    },
+    "trae.tab.enableRename": false,
+    "trae.tab.enableAutoImport": false
 }
